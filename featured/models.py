@@ -28,4 +28,4 @@ def get_featured_queryset_for(model, category=None, manager=None):
         queryset = queryset.filter(category=category)
     if not manager:
         manager = model.objects
-    return manager.filter(pk__in=queryset)
+    return manager.filter(pk__in=queryset.values_list('object_id', flat=True))
