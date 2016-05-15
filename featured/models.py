@@ -2,11 +2,13 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
 
+import swapper
+
 
 class Featured(models.Model):
     content_object = GenericForeignKey()
     content_type = models.ForeignKey(ContentType)
-    category = models.ForeignKey('Category')
+    category = models.ForeignKey(swapper.get_model_name('featured', 'Category'))
     object_id = models.IntegerField()
 
     def __unicode__(self):
@@ -16,6 +18,9 @@ class Featured(models.Model):
 class Category(models.Model):
     slug = models.SlugField(unique=True)
     active = models.BooleanField(default=False)
+
+    class Meta:
+        swappable = swapper.swappable_setting('featured', 'Category')
 
     def __unicode__(self):
         return self.slug
