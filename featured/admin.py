@@ -10,6 +10,7 @@ from featured.models import Featured, Category
 class FeaturedAdminForm(forms.ModelForm):
     class Meta:
         model = Featured
+        fields = '__all__'
 
     def __init__(self, *args, **kwargs):
         super(FeaturedAdminForm, self).__init__(*args, **kwargs)
