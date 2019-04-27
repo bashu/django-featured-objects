@@ -13,7 +13,7 @@ setup(
     description='Django app for making any object featured',
     author='Pedro Buron',
     author_email='pedro@witoi.com',
-    long_description=open('README.md', 'r').read(),
+    long_description=open('README.rst', 'r').read(),
     url='http://desarrollo.witoi.com/',
     packages=[
         'featured',

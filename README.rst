@@ -31,12 +31,12 @@ First install the module, preferably in a virtual environment. It can be install
 Setup
 =====
 
-You'll need to add ``featured_objects`` to ``INSTALLED_APPS`` in your project's ``settings.py`` file:
+You'll need to add ``featured`` to ``INSTALLED_APPS`` in your project's ``settings.py`` file:
 
 .. code-block:: python
 
     INSTALLED_APPS += [
-        'featured_objects',
+        'featured',
     ]
 
 Then run ``./manage.py migrate`` to create the required database tables.
