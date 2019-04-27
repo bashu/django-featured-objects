@@ -4,8 +4,6 @@ from setuptools import setup
 
 from featured import __version__
 
-from run_tests import TestCommand
-
 
 version = ".".join(map(str, __version__))
 
@@ -31,6 +29,15 @@ setup(
         'Programming Language :: Python',
         'Topic :: Utilities'
     ],
-    requires=['Django (>=1.3)'],
-    cmdclass={'test': TestCommand}
+    install_requires=[
+        'swapper',
+    ],
+    requires=[
+        'Django (>=1.4.2)',
+    ],
+    tests_require=[
+        'django-setuptest',
+        'mock',
+    ],
+    test_suite='setuptest.setuptest.SetupTestSuite',
 )
