@@ -28,8 +28,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', primary_key=True, serialize=False, auto_created=True)),
                 ('object_id', models.IntegerField()),
-                ('category', models.ForeignKey(to=settings.FEATURED_CATEGORY_MODEL)),
-                ('content_type', models.ForeignKey(to='contenttypes.ContentType')),
+                ('category', models.ForeignKey(to=settings.FEATURED_CATEGORY_MODEL, on_delete=models.CASCADE)),
+                ('content_type', models.ForeignKey(to='contenttypes.ContentType', on_delete=models.CASCADE)),
             ],
         ),
     ]

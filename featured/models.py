@@ -7,8 +7,8 @@ import swapper
 
 class Featured(models.Model):
     content_object = GenericForeignKey()
-    content_type = models.ForeignKey(ContentType)
-    category = models.ForeignKey(swapper.get_model_name('featured', 'Category'))
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    category = models.ForeignKey(swapper.get_model_name('featured', 'Category'), on_delete=models.CASCADE)
     object_id = models.IntegerField()
 
     def __unicode__(self):
