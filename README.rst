@@ -53,6 +53,10 @@ There is only one mandatory configuration option you need to set in your ``setti
         ('app_label', 'another_model_name'),
     )
 
+Please see the ``example`` application. This application is used to manually test the functionalities of this package. This also serves as a good example.
+
+You need Django 1.8 or above to run that. It might run on older versions but that is not tested.
+
 Usage
 =====
 [TBD]
